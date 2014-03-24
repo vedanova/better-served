@@ -1,0 +1,44 @@
+%nav.navbar.navbar-default#navbar
+  .navbar-container#navbar-container
+    .navbar-header.pull-left
+      %button.navbar-toggle{type: "button", data: {toggle:"collapse", target:".navbar-collapse"}}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to t('app_name'), root_path, class: 'navbar-brand'
+
+    -#.collapse.navbar-collapse
+    -#  %ul.nav.navbar-nav
+    -#    = render 'layouts/navigation_links'
+    .navbar-header.pull-right{role: 'navigation'}
+      - if current_user
+        .nav.ace-nav
+          %li.light-blue
+            = link_to '#',  class: 'dropdown-toggle', data: {toggle: 'dropdown'} do
+              %span.user-info
+                %small
+                  ="#{t('navigation.header.user.welcome')},"
+                = current_user.username
+              =icon('caret-down')
+            %ul.user-menu.pull-right.dropdown-menu.dropdown-yellow.dropdown-caret.dropdown-close
+              -#%li
+              -#  = link_to '#' do
+              -#    = icon('cog')
+              -#    = t('navigation.items.settings')
+              -#%li
+              -#  = link_to '#' do
+              -#    = icon('user')
+              -#    = t('navigation.items.profile')
+
+              -#%li.divider
+              %li
+                = link_to destroy_user_session_path,  :method=>'delete' do
+                  = icon('power-off')
+                  = t('navigation.items.log_out')
+      - else
+        .nav.ace-nav
+          %li.light-blue
+            =link_to t('navigation.items.sign_in'), login_path
+          %li.light-blue
+            =link_to t('navigation.items.sign_up'), signup_path

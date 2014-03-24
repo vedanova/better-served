@@ -1,0 +1,41 @@
+!!!
+%html
+  %head
+    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}
+    %title= @title || "BetterServed"
+    = favicon_link_tag 'favicon.ico'
+    = stylesheet_link_tag "application", media: "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+    <!--[if lte IE 8]>
+    = stylesheet_link_tag "ace/ace-ie"
+    <![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    = javascript_include_tag "ace/html5shiv"
+    = javascript_include_tag "ace/respond.min"
+    <![endif]-->
+
+%body.login-layout
+
+  .main-container#main-container
+    .main-content
+      .row
+        .col-sm-10.col-sm-offset-1
+          .login-container
+            .center
+              %h1
+                %span.white BetterServed
+              %h4
+            .space-6
+            .position-relative
+              #login-box.login-box.visible.widget-box.no-border
+                .widget-body
+                  = yield
+              #forgot-box.forgot-box.widget-box.no-border
+              #signup-box.widget-box.no-border.signup-box
+
+
+

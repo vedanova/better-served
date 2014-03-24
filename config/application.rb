@@ -25,6 +25,5 @@ module BetterServed
     
     # Test framework
     config.generators.test_framework :rspec
-    
   end
 end

@@ -1,0 +1,36 @@
+.widget-main
+  %h4.header.blue.lighter.bigger Please Enter Your Information
+
+  = form_for(resource, as: resource_name, url: session_path(resource_name), role: 'form') do |f|
+    %fieldset
+      %label.block.clearfix
+        %span.block.input-icon.input-icon-right
+          = f.text_field :username, autofocus: true, class: 'form-control', placeholder: 'Username'
+          =icon('user')
+      %label.block.clearfix
+        %span.block.input-icon.input-icon-right
+          = f.password_field :password, autofocus: true, class: 'form-control', placeholder: 'Password'
+          =icon('lock')
+      .space
+      .clearfix
+        %label.inline
+          = f.check_box :remember_me, class: 'ace'
+          %span.lbl= t('login.remember_me')
+        %button.width-35.pull-right.btn.btn-sm.btn-primary{type:"submit"}
+          =icon('key')
+          = t('navigation.items.sign_in')
+
+      .space-4
+.toolbar.clearfix
+  %div
+    = link_to '#', class: 'forgot-password-link' do
+      =icon('arrow-left')
+      =t('sessions.forgot_pwd')
+  %div
+    = link_to '#', class: 'user-signup-link' do
+      =icon('arrow-right')
+      =t('sessions.register')
+
+
+
+

@@ -13,5 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap
+//= require ace/bootstrap
 //= require_tree .
+
+//= require ace/ace
+//= require ace/ace-elements

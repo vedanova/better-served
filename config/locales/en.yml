@@ -20,4 +20,26 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  app_name: 'BetterServed'
+
+  navigation:
+    header:
+      user:
+        welcome: 'Welcome'
+    items:
+      settings: 'Settings'
+      profile: 'Profile'
+      log_out: 'Log out'
+      home: 'Home'
+      dashboard: 'Dashboard'
+      sign_in: 'Log in'
+      sign_up: 'Sign up'
+  login:
+      remember_me: ' Remember Me'
+  sessions:
+      forgot_pwd: 'I forgot my password'
+      register: 'I want to register'
+  registration:
+      register: New User Registration
+      enter_details: 'Enter your details to begin:'
+

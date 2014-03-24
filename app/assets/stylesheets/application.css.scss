@@ -1,7 +1,13 @@
 /*
- * Overwritten by RailsBricks
  *
  *= require_self
  */
-@import "framework_and_overrides";
+@import "ace/bootstrap.min";
+@import "font-awesome";
+@import "ace/ace-fonts";
+@import "ace/ace";
+@import "ace/ace-rtl";
+@import "ace/ace-skins";
+
+//@import "framework_and_overrides";
 

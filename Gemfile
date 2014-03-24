@@ -2,13 +2,16 @@ source 'https://rubygems.org'
 ruby '1.9.3'
 gem 'rails', '4.0.3'
 gem 'sass-rails', '~> 4.0.1'
+gem 'haml'
 gem 'uglifier', '~> 2.4.0'
 gem 'coffee-rails', '~> 4.0.1'
 gem 'jquery-rails', '~> 3.0.4'
 gem 'turbolinks', '~> 2.1.0'
 gem 'jbuilder', '~> 1.5.3'
 gem 'bcrypt-ruby', '~> 3.1.2'
-
+gem 'pg'
+gem 'puma'
+gem 'simple_form'
 group :doc do
   gem 'sdoc', require: false
 end
@@ -37,7 +40,7 @@ group :development, :test do
   gem 'rails_layout', '~> 0.5.11'  # Bootstrap 3 layout generator
 end
 
-gem 'bootstrap-sass', '~> 3.0.3.0'
+#gem 'bootstrap-sass', '~> 3.0.3.0'
 
 
 # RSpec

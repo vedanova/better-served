@@ -1,0 +1,81 @@
+!!!
+%html
+  %head
+    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}
+    %title= @title || "BetterServed"
+    = favicon_link_tag 'favicon.ico'
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => false
+    = javascript_include_tag "application", "data-turbolinks-track" => false
+    = csrf_meta_tags
+
+    <!--[if lte IE 8]>
+    = stylesheet_link_tag "ace/ace-ie"
+    <![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    = javascript_include_tag "ace/html5shiv"
+    = javascript_include_tag "ace/respond.min"
+    <![endif]-->
+
+%body
+  #wrap
+    %header
+      = render 'layouts/navigation'
+      
+    .main-container#main-container
+      .main-container-inner
+        = link_to '#', class: 'menu-toggler', id: 'menu-toggler' do
+          %span.menu-text
+        .sidebar.display#sidebar
+          .sidebar-shortcuts#sidebar-shortcuts
+            .sidebar-shortcuts-large#sidebar-shortcuts-large
+              %button.btn.btn-success
+                =icon('signal')
+              %button.btn.btn-info
+                =icon('pencil')
+              %button.btn.btn-warning
+                =icon('pencil')
+              %button.btn.btn-danger
+                =icon('pencil')
+            .sidebar-shortcuts-mini#sidebar-shortcuts-mini
+              %span.btn.btn-success
+              %span.btn.btn-info
+              %span.btn.btn-warning
+              %span.btn.btn-danger
+          %ul.nav.nav-list
+            %li.active
+              = link_to root_path do
+                = icon('dashboard')
+                %span.menu-text= t('navigation.items.dashboard')
+
+            %li
+              = link_to '#', class: 'dropdown-toggle' do
+                = icon('desktop')
+                %span.menu-text UI Elements
+                %b.arrow.fa.fa-angle-down
+
+              %ul.submenu
+                %li
+                  = link_to '#' do
+                    =icon('angle-double-right')
+                    Elements
+
+        .main-content
+          .breadcrumbs#breadcrumbs
+            %ul.breadcrumb
+              %li
+                = icon('home')
+                =t('navigation.items.home')
+          .page-content
+            .page-header
+              %h1= @title || "BetterServed"
+            .row
+              .col-xs-12
+                = render 'layouts/messages'
+            .row
+              .col-xs-12
+                = yield
+
+    
+  = render 'layouts/footer'
