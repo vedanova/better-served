@@ -12,43 +12,32 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'pg'
 gem 'puma'
 gem 'simple_form'
+# Paging
+gem 'kaminari', '~> 0.15.0'
+# Slugs and friendly id's
+gem 'friendly_id', '~> 5.0.2'
+# font-awesome
+gem 'font-awesome-sass', '~> 4.0.2'
+# Devise
+gem 'devise', '~> 3.2.2'
+
 group :doc do
   gem 'sdoc', require: false
+end
+
+group :test do
+  gem "cucumber-rails", :require => false
+  gem "rspec-rails", '~> 2.14.1'
+  gem "capybara", '~> 2.2.1'
+  gem "machinist", ">= 2.0"
 end
 
 # development gems
 group :development, :test do
   gem 'sqlite3', '~> 1.3.8'    # dev & test database
   gem 'figaro', '~> 0.7.0'     # env variables
-end
-
-# Paging
-gem 'kaminari', '~> 0.15.0'
-
-# Slugs and friendly id's
-gem 'friendly_id', '~> 5.0.2'
-
-# font-awesome
-gem 'font-awesome-sass', '~> 4.0.2'
-
-# Devise
-gem 'devise', '~> 3.2.2'
-
-
-# Bootstrap 3
-group :development, :test do
   gem 'rails_layout', '~> 0.5.11'  # Bootstrap 3 layout generator
 end
 
+
 #gem 'bootstrap-sass', '~> 3.0.3.0'
-
-
-# RSpec
-group :test, :development do
-  gem "rspec-rails", '~> 2.14.1'
-end
-
-# Capybara
-group :test do
-  gem "capybara", '~> 2.2.1'
-end
