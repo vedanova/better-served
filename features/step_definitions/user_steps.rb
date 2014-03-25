@@ -149,3 +149,12 @@ Then /^I should see a missing organisation message$/ do
     page.should have_content "can't be blank"
   end
 end
+
+
+Then(/^I should be confirmed$/) do
+  @user.reload.confirmed?.should be_true
+end
+
+And(/^I should see a successful confirmation message$/) do
+  page.should have_content "Your account was successfully confirmed"
+end

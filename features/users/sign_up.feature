@@ -7,11 +7,17 @@ Feature: Sign up
     Background:
       #Given I am not logged in
 
-    Scenario: User signs up with valid data
+    Scenario: User signs up with valid data and logs in should be on the wizard page
       And I sign up with valid user data
       Then I should see a successful sign up message
         And I should receive an email
         And there should have been an organisation with name "Acme" created
+        And I open the email with subject "Confirmation instructions"
+        And I click the first link in the email
+        Then I should be confirmed
+        And I should see a successful confirmation message
+        And I should be on the login page
+
       
     Scenario: User signs up with invalid email
       When I sign up with an invalid email
