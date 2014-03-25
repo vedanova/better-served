@@ -64,4 +64,9 @@ en:
       reset_pwd_text2: "If you didn't request this, please ignore this email."
       reset_pwd_text3: "Your password won't change until you access the link above and create a new one."
 
-
+  wizard:
+    index:
+      title: 'Quick setup'
+      header: "Let's get you started quickly"
+      intro_text: "Thanks for registering. Lets quickly set you up so you can start invoking your first notifications."
+      start_wizard: 'Start Wizard'

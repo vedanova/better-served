@@ -25,10 +25,14 @@ group :doc do
 end
 
 group :test do
-  gem "cucumber-rails", :require => false
+  gem "cucumber-rails", require: false
   gem "rspec-rails", '~> 2.14.1'
   gem "capybara", '~> 2.2.1'
   gem "machinist", ">= 2.0"
+  gem 'zeus', "0.13.4.pre2", require: false
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'email_spec'
 end
 
 # development gems

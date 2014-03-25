@@ -1,5 +1,10 @@
 BetterServed::Application.routes.draw do
 
+  resources :wizard, only: :index do
+    collection do
+      get :start
+    end
+  end
   get "home", to: "pages#home", as: "home"
   get "inside", to: "pages#inside", as: "inside"
 

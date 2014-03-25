@@ -18,26 +18,26 @@
     = javascript_include_tag "ace/respond.min"
     <![endif]-->
 
-%body.login-layout
+  %body.login-layout
 
-  .main-container#main-container
-    .main-content
-      .row
-        .col-sm-10.col-sm-offset-1
-          .login-container
-            .center
-              %h1
-                %span.white BetterServed
-              %h4
-            .space-6
-            .row
-              .col-xs-12
-            .position-relative
-              #login-box.login-box.visible.widget-box.no-border
-                .widget-body
-                  = yield
-              #forgot-box.forgot-box.widget-box.no-border
-              #signup-box.widget-box.no-border.signup-box
+    .main-container#main-container
+      .main-content
+        .row
+          .col-sm-10.col-sm-offset-1
+            .login-container
+              .center
+                %h1
+                  %span.white BetterServed
+                %h4
+              .space-6
+              .row
+                .col-xs-12
+              .position-relative
+                #login-box.login-box.visible.widget-box.no-border
+                  .widget-body
+                    = yield
+                #forgot-box.forgot-box.widget-box.no-border
+                #signup-box.widget-box.no-border.signup-box
 
 
 

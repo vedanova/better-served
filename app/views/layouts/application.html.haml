@@ -18,64 +18,64 @@
     = javascript_include_tag "ace/respond.min"
     <![endif]-->
 
-%body
-  #wrap
-    %header
-      = render 'layouts/navigation'
-      
-    .main-container#main-container
-      .main-container-inner
-        = link_to '#', class: 'menu-toggler', id: 'menu-toggler' do
-          %span.menu-text
-        .sidebar.display#sidebar
-          .sidebar-shortcuts#sidebar-shortcuts
-            .sidebar-shortcuts-large#sidebar-shortcuts-large
-              %button.btn.btn-success
-                =icon('signal')
-              %button.btn.btn-info
-                =icon('pencil')
-              %button.btn.btn-warning
-                =icon('pencil')
-              %button.btn.btn-danger
-                =icon('pencil')
-            .sidebar-shortcuts-mini#sidebar-shortcuts-mini
-              %span.btn.btn-success
-              %span.btn.btn-info
-              %span.btn.btn-warning
-              %span.btn.btn-danger
-          %ul.nav.nav-list
-            %li.active
-              = link_to root_path do
-                = icon('dashboard')
-                %span.menu-text= t('navigation.items.dashboard')
+  %body
+    #wrap
+      %header
+        = render 'layouts/navigation'
 
-            %li
-              = link_to '#', class: 'dropdown-toggle' do
-                = icon('desktop')
-                %span.menu-text UI Elements
-                %b.arrow.fa.fa-angle-down
+      .main-container#main-container
+        .main-container-inner
+          = link_to '#', class: 'menu-toggler', id: 'menu-toggler' do
+            %span.menu-text
+          .sidebar.display#sidebar
+            .sidebar-shortcuts#sidebar-shortcuts
+              .sidebar-shortcuts-large#sidebar-shortcuts-large
+                %button.btn.btn-success
+                  =icon('signal')
+                %button.btn.btn-info
+                  =icon('pencil')
+                %button.btn.btn-warning
+                  =icon('pencil')
+                %button.btn.btn-danger
+                  =icon('pencil')
+              .sidebar-shortcuts-mini#sidebar-shortcuts-mini
+                %span.btn.btn-success
+                %span.btn.btn-info
+                %span.btn.btn-warning
+                %span.btn.btn-danger
+            %ul.nav.nav-list
+              %li.active
+                = link_to root_path do
+                  = icon('dashboard')
+                  %span.menu-text= t('navigation.items.dashboard')
 
-              %ul.submenu
-                %li
-                  = link_to '#' do
-                    =icon('angle-double-right')
-                    Elements
-
-        .main-content
-          .breadcrumbs#breadcrumbs
-            %ul.breadcrumb
               %li
-                = icon('home')
-                =t('navigation.items.home')
-          .page-content
-            .page-header
-              %h1= @title || "BetterServed"
-            .row
-              .col-xs-12
-                = render 'layouts/messages'
-            .row
-              .col-xs-12
-                = yield
+                = link_to '#', class: 'dropdown-toggle' do
+                  = icon('desktop')
+                  %span.menu-text UI Elements
+                  %b.arrow.fa.fa-angle-down
 
-    
-  = render 'layouts/footer'
+                %ul.submenu
+                  %li
+                    = link_to '#' do
+                      =icon('angle-double-right')
+                      Elements
+
+          .main-content
+            .breadcrumbs#breadcrumbs
+              %ul.breadcrumb
+                %li
+                  = icon('home')
+                  =t('navigation.items.home')
+            .page-content
+              .page-header
+                %h1= @page_title || @title
+              .row
+                .col-xs-12
+                  = render 'layouts/messages'
+              .row
+                .col-xs-12
+                  = yield
+
+
+    = render 'layouts/footer'
