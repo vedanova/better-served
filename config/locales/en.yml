@@ -21,6 +21,8 @@
 
 en:
   app_name: 'BetterServed'
+  mailer:
+    thanks_from: "BetterServed Team"
 
   navigation:
     header:
@@ -36,10 +38,20 @@ en:
       sign_up: 'Sign up'
   login:
       remember_me: ' Remember Me'
+      login: 'Username or email'
   sessions:
       forgot_pwd: 'I forgot my password'
       register: 'I want to register'
+      login: 'I want to login'
   registration:
       register: New User Registration
       enter_details: 'Enter your details to begin:'
+      lost_confirmation_instructions: "Resend confirmation instructions"
+      email: 'Email'
+      first_name: 'First name'
+      last_name: 'Last name'
+      password: 'Password'
+      password_confirmation: 'Password confirmation'
+      username: 'Username'
+      organization: 'Company'
 

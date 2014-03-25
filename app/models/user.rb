@@ -1,8 +1,30 @@
 class User < ActiveRecord::Base
+
+  belongs_to :organisation
+  accepts_nested_attributes_for :organisation, reject_if: :all_blank
+  after_initialize :initialize_organization
+
   # Use friendly_id on Users
   extend FriendlyId
   friendly_id :friendify, use: :slugged
-  
+
+  validates :organisation, presence: true
+  validates :first_name, presence: true, length: {in: 3..255}
+  validates :last_name, presence: true, length: {in: 3..255}
+
+
+  # Virtual attribute for authenticating by either username or email
+  # This is in addition to a real persisted field like 'username'
+  attr_accessor :login
+
+  def login=(login)
+    @login = login
+  end
+
+  def login
+    @login || self.username || self.email
+  end
+
   # necessary to override friendly_id reserved words
   def friendify
     if username.downcase == "admin"
@@ -15,7 +37,8 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable,
+         :authentication_keys => [:login]
          
   # Pagination
   paginates_per 100
@@ -24,7 +47,7 @@ class User < ActiveRecord::Base
   # :username
   validates :username, uniqueness: { case_sensitive: false }
   validates_format_of :username, with: /\A[a-zA-Z0-9]*\z/, on: :create, message: "can only contain letters and digits"
-  validates :username, length: { in: 4..10 }
+  validates :username, length: { in: 5..10 }
   # :email
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
   
@@ -54,4 +77,20 @@ class User < ActiveRecord::Base
   def self.users_count
     where("admin = ? AND locked = ?",false,false).count
   end
+
+  def self.find_first_by_auth_conditions(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      where(conditions).where(["lower(username) = :value OR lower(email) = :value", { :value => login.downcase }]).first
+    else
+      where(conditions).first
+    end
+  end
+
+  private
+
+  def initialize_organization
+    self.build_organisation if self.organisation.nil?
+  end
+
 end

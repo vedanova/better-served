@@ -1,0 +1,28 @@
+.widget-main
+  %h4.header.blue.lighter.bigger Resend confirmation instructions
+  = render 'layouts/messages'
+  = devise_error_messages!
+  = form_for(resource, :as => resource_name,
+    :url => confirmation_path(resource_name),
+    :html => { :method => :post, :role => "form" }) do |f|
+    %fieldset
+
+    %fieldset
+      %label.block.clearfix
+        %span.block.input-icon.input-icon-right
+          = f.text_field :login, :autofocus => true, class: "form-control", placeholder: t('login.login')
+
+
+
+
+    .row
+      .col-sm-6
+        = f.submit "Resend confirmation instructions", class: "btn btn-primary"
+
+
+
+
+
+    =# render "devise/shared/links"
+
+

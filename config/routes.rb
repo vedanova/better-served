@@ -5,10 +5,10 @@ BetterServed::Application.routes.draw do
 
   resources :dashboard, only: :index
 
-  devise_for :users, controllers: {}, skip: [:sessions]
+  devise_for :users, skip: [:sessions]
   devise_scope :user do
     get "signup" => "registrations#new", as: :signup
-    post "signup" => "registrations#new", as: :signup_post
+    post "signup" => "registrations#new", as: :create_user
     get 'login' => 'sessions#new', as: :new_user_session
     post 'login' => 'sessions#create', as: :user_session
     delete 'logout' => 'sessions#destroy', as: :destroy_user_session
@@ -19,6 +19,6 @@ BetterServed::Application.routes.draw do
     resources :users
   end
 
-  root "pages#home"
+  root to: "pages#home"
 
 end

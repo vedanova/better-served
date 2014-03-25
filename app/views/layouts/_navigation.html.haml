@@ -39,6 +39,6 @@
       - else
         .nav.ace-nav
           %li.light-blue
-            =link_to t('navigation.items.sign_in'), login_path
+            =link_to t('navigation.items.sign_in'), new_session_path(resource_name)
           %li.light-blue
             =link_to t('navigation.items.sign_up'), signup_path

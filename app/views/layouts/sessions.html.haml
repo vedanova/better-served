@@ -4,7 +4,7 @@
     %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}
     %title= @title || "BetterServed"
     = favicon_link_tag 'favicon.ico'
-    = stylesheet_link_tag "application", media: "all"
+    = stylesheet_link_tag "sessions", media: "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
 
@@ -30,6 +30,8 @@
                 %span.white BetterServed
               %h4
             .space-6
+            .row
+              .col-xs-12
             .position-relative
               #login-box.login-box.visible.widget-box.no-border
                 .widget-body
