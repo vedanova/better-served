@@ -23,6 +23,8 @@ en:
   app_name: 'BetterServed'
   mailer:
     thanks_from: "BetterServed Team"
+  phrases:
+    hello: 'Hello'
 
   navigation:
     header:
@@ -54,4 +56,12 @@ en:
       password_confirmation: 'Password confirmation'
       username: 'Username'
       organization: 'Company'
+  confirmations:
+      confirm_account: 'Confirm my account'
+      confirm_account_text: 'You need to confirm your account email through the link below:'
+  reset_pwd:
+      reset_pwd_text: 'Someone has requested a link to change your password. You can do this through the link below.'
+      reset_pwd_text2: "If you didn't request this, please ignore this email."
+      reset_pwd_text3: "Your password won't change until you access the link above and create a new one."
+
 
