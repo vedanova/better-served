@@ -24,10 +24,15 @@ module BetterServed
     I18n.enforce_available_locales = false
 
     # Test framework
-    config.generators.test_framework :rspec
+    config.generators.test_framework :rspec, fixture: true
     config.generators do |g|
       g.fixture_replacement :machinist
+      g.view_specs false
+      g.helper_specs false
+      g.assets false
+      g.helper false
     end
+
 
     config.to_prepare do
       Devise::SessionsController.layout "sessions"

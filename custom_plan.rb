@@ -2,6 +2,9 @@ require 'zeus/rails'
 
 class CustomPlan < Zeus::Rails
 
+  def cucumber_env
+    ::Rails.env = ENV['RAILS_ENV'] = 'cucumber'
+  end
 
   # def my_custom_command
   #  # see https://github.com/burke/zeus/blob/master/docs/ruby/modifying.md

@@ -3,7 +3,7 @@
 # newer version of cucumber-rails. Consider adding your own code to a new file
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
-
+ENV["RAILS_ENV"] ||= "cucumber"
 require 'cucumber/rails'
 require 'email_spec/cucumber'
 
@@ -57,3 +57,6 @@ end
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
+Dir.glob((Rails.root + 'spec/support/*.rb').to_s).each do |file|
+  require file
+end

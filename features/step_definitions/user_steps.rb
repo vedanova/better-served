@@ -7,7 +7,7 @@ end
 ### GIVEN ###
 Given /^I am not logged in$/ do
   rack_test_session_wrapper = Capybara.current_session.driver
-  rack_test_session_wrapper.submit :post, "/logout", nil
+  rack_test_session_wrapper.submit :delete, "/logout", nil
 end
 Given /^I am logged in$/ do
   create_user
@@ -21,7 +21,7 @@ end
 def create_user
   create_visitor
   delete_user
-  @user = User.make!(email: @visitor[:email])
+  @user = User.make!(email: @visitor[:email], username: @visitor[:username])
 end
 
 def delete_user
@@ -157,4 +157,48 @@ end
 
 And(/^I should see a successful confirmation message$/) do
   page.should have_content "Your account was successfully confirmed"
+end
+
+Given /^I do not exist as a user$/ do
+  create_visitor
+  delete_user
+end
+
+### WHEN ###
+When /^I sign in with valid credentials$/ do
+  create_visitor
+  sign_in
+end
+
+### WHEN ###
+When /^I sign in with valid credentials using my username$/ do
+  create_visitor
+  visit '/login'
+  fill_in "user_login", :with => @visitor[:username]
+  fill_in "Password", :with => @visitor[:password]
+  click_button "Log in"
+end
+
+
+Then /^I should be signed out$/ do
+  page.should have_content "Please Enter Your Information"
+  #page.should_not have_content "Logout"
+end
+
+def sign_in
+  visit '/login'
+  fill_in "user_login", :with => @visitor[:email]
+  fill_in "Password", :with => @visitor[:password]
+  click_button "Log in"
+end
+
+Then /^I see a successful sign in message$/ do
+  page.should have_content "Signed in successfully."
+end
+
+### THEN ###
+Then /^I should be signed in$/ do
+  page.should have_content "Welcome, Mike"
+  page.should_not have_content "Sign up"
+  page.should_not have_content "Login"
 end

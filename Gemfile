@@ -24,7 +24,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :test do
+group :test, :cucumber do
   gem "cucumber-rails", require: false
   gem "rspec-rails", '~> 2.14.1'
   gem "capybara", '~> 2.2.1'
