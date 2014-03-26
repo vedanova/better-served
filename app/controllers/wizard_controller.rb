@@ -6,7 +6,8 @@ class WizardController < ApplicationController
   def index
   end
 
-  def start
+  def step1
+    @premise = Premise.new
   end
 
 end

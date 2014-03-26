@@ -11,4 +11,24 @@ module ApplicationHelper
     end
   end
 
+  def hr_double
+    haml_tag "div.hr.hr-18.hr-double.dotted"
+  end
+
+  def wizard(title, &block)
+    capture_haml do
+      haml_tag ".widget-box" do
+        haml_tag "div.widget-header.widget-header-blue.widget-header-flat" do
+          haml_tag "h4" do
+            haml_concat title
+          end
+        end
+        haml_tag ".widget-body" do
+          haml_tag ".widget-main" do
+            yield
+          end
+        end
+      end
+    end
+  end
 end

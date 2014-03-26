@@ -3,6 +3,7 @@ ruby '1.9.3'
 gem 'rails', '4.0.3'
 gem 'sass-rails', '~> 4.0.1'
 gem 'haml'
+gem 'haml-rails'
 gem 'uglifier', '~> 2.4.0'
 gem 'coffee-rails', '~> 4.0.1'
 gem 'jquery-rails', '~> 3.0.4'
@@ -20,6 +21,9 @@ gem 'friendly_id', '~> 5.0.2'
 gem 'font-awesome-sass', '~> 4.0.2'
 # Devise
 gem 'devise', '~> 3.2.2'
+
+#foreign keys
+gem 'foreigner'
 group :doc do
   gem 'sdoc', require: false
 end

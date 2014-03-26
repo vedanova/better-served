@@ -1,0 +1,72 @@
+- title(t('.title'))
+#start-wizard
+  = wizard(t('wizard.title')) do
+    #fuelux-wizard.row-fluid{"data-target" => "#step-container"}
+      %ul.wizard-steps
+        %li.active{"data-target" => "#step1"}
+          %span.step 1
+          %span.title= t('wizard.step_1')
+        %li{"data-target" => "#step2"}
+          %span.step 2
+          %span.title= t('wizard.step_2')
+        %li{"data-target" => "#step3"}
+          %span.step 3
+          %span.title= t('wizard.step_3')
+        %li{"data-target" => "#step4"}
+          %span.step 4
+          %span.title= t('wizard.step_4')
+    %hr
+    #step-container.step-content.row-fluid.position-relative
+      #step1.step-pane.active
+        .alert.alert-info
+          = icon('hand-o-right', t('.explanation'), class: 'hand-right-animated')
+        - hr_double
+        = simple_form_for @premise, html: {class: 'form-horizontal'} do |f|
+          = f.input :name, autofocus: true, input_html: { class: "col-xs-10 col-sm-5"}, :label_html => { :class =>'col-xs-3 no-padding-right' }, placeholder: t('phrases.name')
+          = f.input :description, autofocus: true, input_html: { class: "col-xs-10 col-sm-5"}, :label_html => { :class =>'col-xs-3 no-padding-right' }, placeholder: t('phrases.description')
+
+
+      #step2.step-pane
+        .row-fluid
+          .alert.alert-success
+            %button.close{"data-dismiss" => "alert", type: "button"}
+              %i.icon-remove
+            %strong
+              %i.icon-ok
+              Well done!
+            You successfully read this important alert message.
+            %br/
+          .alert.alert-danger
+            %button.close{"data-dismiss" => "alert", type: "button"}
+              %i.icon-remove
+            %strong
+              %i.icon-remove
+              Oh snap!
+            Change a few things up and try submitting again.
+            %br/
+          .alert.alert-warning
+            %button.close{"data-dismiss" => "alert", type: "button"}
+              %i.icon-remove
+            %strong Warning!
+            Best check yo self, you're not looking too good.
+            %br/
+          .alert.alert-info
+            %button.close{"data-dismiss" => "alert", type: "button"}
+              %i.icon-remove
+            %strong Heads up!
+            This alert needs your attention, but it's not super important.
+            %br/
+      #step3.step-pane
+        .center
+          %h3.blue.lighter This is step 3
+      #step4.step-pane
+        .center
+          %h3.green Congrats!
+          Your product is ready to ship! Click finish to continue!
+    .row-fluid.wizard-actions
+      %button.btn.btn-prev{disabled: "disabled"}
+        =icon('arrow-left', t('phrases.previous'), class:'fa-on-left')
+
+      %button.btn.btn-success.btn-next{"data-last" => "Finish "}
+        =t('phrases.next')
+        =icon('arrow-right', nil, class:'fa-on-right')

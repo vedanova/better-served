@@ -1,8 +1,9 @@
 BetterServed::Application.routes.draw do
 
+  resources :premises
   resources :wizard, only: :index do
     collection do
-      get :start
+      get :start, :step1
     end
   end
   get "home", to: "pages#home", as: "home"

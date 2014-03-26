@@ -25,6 +25,10 @@ en:
     thanks_from: "BetterServed Team"
   phrases:
     hello: 'Hello'
+    name: 'Name'
+    description: 'Description'
+    next: 'Next'
+    previous: 'Prev' # Wizard next, prev buttons
 
   navigation:
     header:
@@ -65,8 +69,19 @@ en:
       reset_pwd_text3: "Your password won't change until you access the link above and create a new one."
 
   wizard:
+    title: "Quick setup"
+    step_1: "Setup premise"
+    step_2: "Setup place"
+    step_3: "Create objects"
+    step_4: "Summary"
     index:
       title: 'Quick setup'
       header: "Let's get you started quickly"
-      intro_text: "Thanks for registering. Lets quickly set you up so you can start invoking your first notifications."
+      intro_text: "Thanks for registering. Lets quickly set you up so you can start invoking your first notifications. It takes only 1 minute."
       start_wizard: 'Start Wizard'
+    step1:
+      title: 'Setup a premise'
+      explanation:
+        As an organisation you can have one or more premises. You can add each individually, if you
+        you just have a single premise, just add that one.
+

@@ -13,6 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require can-js/can.jquery
+// require can-js/can.view.mustache
+// require can-js/can.observe.setter
+//= require can-js/can.view.modifiers
+// require can-js/can.construct.proxy
+// require can-js/can.observe.validations
+//= require can-js/can.construct.super
 //= require ace/bootstrap
 //= require_tree .
 
