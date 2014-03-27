@@ -18,7 +18,7 @@
     = javascript_include_tag "ace/respond.min"
     <![endif]-->
 
-  %body{class: "#{controller_name}", id: "#{controller_name}-#{action_name}"}
+  %body{class: "controller-#{controller_name}", id: "#{controller_name}-#{action_name}"}
     #wrap
       %header
         = render 'layouts/navigation'

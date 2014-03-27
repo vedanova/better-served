@@ -6,16 +6,34 @@ var StartWizard = can.Control.extend({}, {
     },
     setupWizard: function () {
         this.wizard = $('#fuelux-wizard');
-        var self = this,
-            $btnPrev = $('.wizard-actions .btn-prev'),
-            $btnNext = $('.wizard-actions .btn-next'),
-            $btnFinish = $(".wizard-actions .btn-finish");
+        var $validation = true;
+        $('#fuelux-wizard').ace_wizard().on('change' , function(e, info){
+            if(info.step == 1 && $validation) {
+                if(!$('#new_premise').valid()) return false;
+            }
+        }).on('finished', function(e) {
+            bootbox.dialog({
+                message: "Thank you! Your information was successfully saved!",
+                buttons: {
+                    "success" : {
+                        "label" : "OK",
+                        "className" : "btn-sm btn-primary"
+                    }
+                }
+            });
+        }).on('stepclick', function(e){
+            //return false;//prevent clicking on steps
+        });
+
 
     }
 
 
 })
 
-if ($('#start-wizard').length == 1) {
-    var wizard = new StartWizard("#start-wizard", {})
-}
+
+$(function () {
+    if ($('#start-wizard').length == 1) {
+        wizard = new StartWizard("#start-wizard", {})
+    }
+})
