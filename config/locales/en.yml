@@ -21,6 +21,11 @@
 
 en:
   app_name: 'BetterServed'
+  premise: 'Premise'
+  place: 'Place'
+  item: 'Objects'
+  items: 'Objects'
+  qr: 'QR'
   mailer:
     thanks_from: "BetterServed Team"
   phrases:
@@ -29,6 +34,7 @@ en:
     description: 'Description'
     next: 'Next'
     previous: 'Prev' # Wizard next, prev buttons
+    correct_errors: Please correct the errors and try again
 
   navigation:
     header:
@@ -79,7 +85,7 @@ en:
       header: "Let's get you started quickly"
       intro_text: "Thanks for registering. Lets quickly set you up so you can start invoking your first notifications. It takes only 1 minute."
       start_wizard: 'Start Wizard'
-    step1:
+    start:
       title: 'Setup a premise'
       subtitle: 'New premise'
       explanation:
@@ -91,8 +97,14 @@ en:
         Each premise can have one or more places. A place could be a floor, a room or any other location you
         want to group objects into.
       step3_title: 'Setup your objects'
-      step3_subtitle: 'New object'
+      step3_subtitle: 'New objects'
+      step3_placeholder: "Table, Room, Printer..."
       step3_explanation:
         Each place can have one or more objects which can be rooms, tables, devices like printers, vending machines, whatever
         you need to tag. In this quick setup you can enter a name for an object and the number of objects you want to create. We
-        will then create these objects for you. You can rename them afterwards.
+        will then create number these objects for you. You can rename them afterwards.
+      item_count: 'Number of items'
+      step4_subtitle: 'Summary'
+      step4_explanation:
+        Congratulations. You are just a few clicks away to test your setup.
+      finish_setup: 'Finish '

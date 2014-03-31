@@ -1,0 +1,84 @@
+- title(t('wizard.title'))
+#start-wizard
+  = wizard(t('.wizard_title')) do
+    #fuelux-wizard{"data-target" => "#step-container"}
+      %ul.wizard-steps
+        %li.active{"data-target" => "#step1"}
+          %span.step 1
+          %span.title= t('wizard.step_1')
+        %li{"data-target" => "#step2"}
+          %span.step 2
+          %span.title= t('wizard.step_2')
+        %li{"data-target" => "#step3"}
+          %span.step 3
+          %span.title= t('wizard.step_3')
+        %li{"data-target" => "#step4"}
+          %span.step 4
+          %span.title= t('wizard.step_4')
+    -#%hr
+    = simple_form_for @premise, url: setup_wizard_index_path, html: {class: 'form-horizontal'} do |f|
+      = f.simple_fields_for :places do |pf|
+        = pf.simple_fields_for :items do |itemf|
+          #step-container.step-content.row-fluid.position-relative
+            #step1.step-pane.active.row
+              - info_alert do
+                = icon('hand-o-right', t('.explanation'), class: 'hand-right-animated')
+              - hr_double
+              .row
+                %h3.blue.lighter.col-xs-push-3.col-sm-push-3.col-md-push-3.col-lg-push-3.col-xs-5= t('.subtitle')
+              .space-8
+              = f.input :name, autofocus: true, input_html: { class: "col-xs-9 col-sm-5", "min-length" => 2, required: true }, :label_html => { :class =>'col-xs-3 no-padding-right'}, placeholder: t('phrases.name')
+              = f.input :description, input_html: { class: "col-xs-9 col-sm-5"}, :label_html => { :class =>'col-xs-3 no-padding-right', required: false}, placeholder: t('phrases.description')
+
+
+            #step2.step-pane.row
+              - info_alert do
+                = icon('hand-o-right', t('.step2_explanation'), class: 'hand-right-animated')
+              - hr_double
+              .row
+                %h3.blue.lighter.col-xs-push-3.col-sm-push-3.col-md-push-3.col-lg-push-3.col-xs-5= t('.step2_subtitle')
+              .space-8
+              = pf.input :name, autofocus: true, input_html: { class: "col-xs-9 col-sm-5", "min-length" => 2, required: true }, :label_html => { :class =>'col-xs-3 no-padding-right'}, placeholder: t('phrases.name')
+              = pf.input :description, input_html: { class: "col-xs-9 col-sm-5"}, :label_html => { :class =>'col-xs-3 no-padding-right', required: false }, placeholder: t('phrases.description')
+
+
+            #step3.step-pane.row
+              - info_alert do
+                = icon('hand-o-right', t('.step3_explanation'), class: 'hand-right-animated')
+              - hr_double
+              .row
+                %h3.blue.lighter.col-xs-push-3.col-sm-push-3.col-md-push-3.col-lg-push-3.col-xs-5= t('.step3_subtitle')
+              .space-8
+              = itemf.input :name, autofocus: true, input_html: { class: "col-xs-9 col-sm-5", "min-length" => 2, required: true }, :label_html => { :class =>'col-xs-3 no-padding-right'}, placeholder: t('.step3_placeholder')
+              = itemf.input :item_count, as: :integer, input_html: { class: "col-xs-9 col-sm-5", required: true, value: WIZARD_MAX_ITEM_DEFAULT, min: WIZARD_MIN_ITEM_COUNT, max: WIZARD_MAX_ITEM_COUNT }, :label_html => { :class =>'col-xs-3 no-padding-right'}
+
+            #step4.step-pane.row
+              - info_alert do
+                = icon('hand-o-right', t('.step4_explanation'), class: 'hand-right-animated')
+              - hr_double
+              .row
+                %h3.blue.lighter.col-xs-push-3.col-sm-push-3.col-md-push-3.col-lg-push-3.col-xs-5= t('.step4_subtitle')
+              .alert.alert-danger#instance-validation-alert.hide
+                %i.icon-remove-sign
+                =t('phrases.correct_errors')
+                %ul.i-launch-error-list
+              .row.col-xs-push-2.col-sm-push-2.col-md-push-2.col-lg-push-2.col-xs-5
+                %dl.dl-horizontal#instance-launch-summary
+                  %dt= t('premise')
+                  %dd#premise-name
+                  %dt= t('place')
+                  %dd#place-name
+                  %dt= t('items')
+                  %dd#item-name
+                  %dt= t('.item_count')
+                  %dd#item-count
+
+              .space-8
+    .wizard-actions.actions
+      %button.btn.btn-prev{disabled: "disabled"}
+        =icon('arrow-left', t('phrases.previous'), class:'fa-on-left')
+
+      %button.btn.btn-success.btn-next{data: {last: t('.finish_setup')}}
+        =t('phrases.next')
+        =icon('arrow-right', nil, class:'fa-on-right')
+

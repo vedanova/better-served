@@ -1,0 +1,14 @@
+- title t('items')
+
+- table do
+  %thead
+    %tr
+      %th= t('phrases.name')
+      %th= t('phrases.description')
+      %th= t('qr')
+  %tbody
+    = render "item", collection: @items
+
+
+
+

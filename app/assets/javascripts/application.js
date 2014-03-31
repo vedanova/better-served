@@ -33,5 +33,5 @@
 //= require ace/ace
 //= require ace/ace-extra
 
-
+//= require premise_model.js
 //= require wizard

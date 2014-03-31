@@ -1,11 +1,18 @@
 BetterServed::Application.routes.draw do
 
-  resources :premises
+  resources :places do
+    resources :items
+  end
+  resources :premises do
+    resources :places
+  end
   resources :wizard, only: :index do
     collection do
-      get :start, :step1
+      get :start
+      post :setup
     end
   end
+
   get "home", to: "pages#home", as: "home"
   get "inside", to: "pages#inside", as: "inside"
 

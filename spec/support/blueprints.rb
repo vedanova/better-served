@@ -34,3 +34,7 @@ end
 Place.blueprint do
   # Attributes here
 end
+
+Item.blueprint do
+  # Attributes here
+end

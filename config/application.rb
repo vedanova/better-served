@@ -2,6 +2,10 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+WIZARD_MIN_ITEM_COUNT = 1
+WIZARD_MAX_ITEM_COUNT = 30
+WIZARD_MAX_ITEM_DEFAULT = 5
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)

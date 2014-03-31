@@ -1,0 +1,1 @@
+Premise = can.Model.extend({},{});

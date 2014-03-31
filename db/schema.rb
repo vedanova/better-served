@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140331061452) do
+ActiveRecord::Schema.define(version: 20140331123136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,19 +29,38 @@ ActiveRecord::Schema.define(version: 20140331061452) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
-  create_table "organisations", force: true do |t|
+  create_table "items", force: true do |t|
     t.string   "name"
+    t.string   "description"
+    t.string   "uuid"
+    t.integer  "place_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "items", ["place_id"], name: "index_items_on_place_id", using: :btree
+  add_index "items", ["uuid"], name: "index_items_on_uuid", using: :btree
+
+  create_table "organisations", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+  end
+
+  add_index "organisations", ["slug"], name: "index_organisations_on_slug", unique: true, using: :btree
+
   create_table "places", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "uuid"
+    t.integer  "premise_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "places", ["premise_id"], name: "index_places_on_premise_id", using: :btree
+  add_index "places", ["slug"], name: "index_places_on_slug", using: :btree
 
   create_table "premises", force: true do |t|
     t.integer  "organisation_id"
@@ -49,9 +68,11 @@ ActiveRecord::Schema.define(version: 20140331061452) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   add_index "premises", ["organisation_id"], name: "index_premises_on_organisation_id", using: :btree
+  add_index "premises", ["slug"], name: "index_premises_on_slug", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username",               default: "",    null: false

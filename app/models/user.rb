@@ -8,10 +8,16 @@ class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :friendify, use: :slugged
 
+  OWNER_ROLE = "owner"
+  MEMBER_ROLE = "member"
+  USER_ROLES = [OWNER_ROLE, MEMBER_ROLE]
+
   validates :organisation, presence: true
   validates :first_name, presence: true, length: {in: 3..255}
   validates :last_name, presence: true, length: {in: 3..255}
+  validates :role, presence: true, inclusion: {in: USER_ROLES}
 
+  has_many :premises, through: :organisation
 
   # Virtual attribute for authenticating by either username or email
   # This is in addition to a real persisted field like 'username'

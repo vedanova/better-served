@@ -32,6 +32,11 @@ module ApplicationHelper
     end
   end
 
+  def table(&block)
+    haml_tag "table.table.table-striped.table-bordered.table-hover" do
+      yield
+    end
+  end
 
 
 end
