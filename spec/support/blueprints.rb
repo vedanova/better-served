@@ -24,12 +24,9 @@ end
 Organisation.blueprint do
   name { 'Boston Pizza' }
 end
-Site.blueprint do
+
+Premise.blueprint do
   name { 'Kitsilano' }
   description { 'Located at corner of 4th St. and Bruce Ave' }
   organisation { Organisation.last || Organisation.make! }
-end
-
-Premise.blueprint do
-  # Attributes here
 end

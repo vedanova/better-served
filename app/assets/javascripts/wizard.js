@@ -34,6 +34,6 @@ var StartWizard = can.Control.extend({}, {
 
 $(function () {
     if ($('#start-wizard').length == 1) {
-        wizard = new StartWizard("#start-wizard", {})
+        startWizard = new StartWizard("#start-wizard", {})
     }
 })
