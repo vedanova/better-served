@@ -81,7 +81,18 @@ en:
       start_wizard: 'Start Wizard'
     step1:
       title: 'Setup a premise'
+      subtitle: 'New premise'
       explanation:
         As an organisation you can have one or more premises. You can add each individually, if you
         you just have a single premise, just add that one.
-
+      step2_title: 'Setup a place'
+      step2_subtitle: 'New place'
+      step2_explanation:
+        Each premise can have one or more places. A place could be a floor, a room or any other location you
+        want to group objects into.
+      step3_title: 'Setup your objects'
+      step3_subtitle: 'New object'
+      step3_explanation:
+        Each place can have one or more objects which can be rooms, tables, devices like printers, vending machines, whatever
+        you need to tag. In this quick setup you can enter a name for an object and the number of objects you want to create. We
+        will then create these objects for you. You can rename them afterwards.

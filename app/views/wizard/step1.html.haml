@@ -1,6 +1,6 @@
-- title(t('.title'))
+- title(t('wizard.title'))
 #start-wizard
-  = wizard(t('wizard.title')) do
+  = wizard(t('.wizard_title')) do
     #fuelux-wizard{"data-target" => "#step-container"}
       %ul.wizard-steps
         %li.active{"data-target" => "#step1"}
@@ -16,53 +16,43 @@
           %span.step 4
           %span.title= t('wizard.step_4')
     -#%hr
-    #step-container.step-content.row-fluid.position-relative
-      #step1.step-pane.active
-        .alert.alert-info
-          = icon('hand-o-right', t('.explanation'), class: 'hand-right-animated')
-        - hr_double
-        = simple_form_for @premise, html: {class: 'form-horizontal'} do |f|
+    = simple_form_for @premise, html: {class: 'form-horizontal'} do |f|
+      #step-container.step-content.row-fluid.position-relative
+        #step1.step-pane.active.row
+          - info_alert do
+            = icon('hand-o-right', t('.explanation'), class: 'hand-right-animated')
+          - hr_double
+          .row
+            %h3.blue.lighter.col-xs-push-3.col-sm-push-3.col-md-push-3.col-lg-push-3.col-xs-5= t('.subtitle')
+          .space-8
           = f.input :name, autofocus: true, input_html: { class: "col-xs-10 col-sm-5", "min-length" => 2, required: true }, :label_html => { :class =>'col-xs-3 no-padding-right'}, placeholder: t('phrases.name')
-          = f.input :description, autofocus: true, input_html: { class: "col-xs-10 col-sm-5"}, :label_html => { :class =>'col-xs-3 no-padding-right' }, placeholder: t('phrases.description')
+          = f.input :description, input_html: { class: "col-xs-10 col-sm-5"}, :label_html => { :class =>'col-xs-3 no-padding-right', required: false}, placeholder: t('phrases.description')
 
 
-      #step2.step-pane
-        .row-fluid
-          .alert.alert-success
-            %button.close{"data-dismiss" => "alert", type: "button"}
-              %i.icon-remove
-            %strong
-              %i.icon-ok
-              Well done!
-            You successfully read this important alert message.
-            %br/
-          .alert.alert-danger
-            %button.close{"data-dismiss" => "alert", type: "button"}
-              %i.icon-remove
-            %strong
-              %i.icon-remove
-              Oh snap!
-            Change a few things up and try submitting again.
-            %br/
-          .alert.alert-warning
-            %button.close{"data-dismiss" => "alert", type: "button"}
-              %i.icon-remove
-            %strong Warning!
-            Best check yo self, you're not looking too good.
-            %br/
-          .alert.alert-info
-            %button.close{"data-dismiss" => "alert", type: "button"}
-              %i.icon-remove
-            %strong Heads up!
-            This alert needs your attention, but it's not super important.
-            %br/
-      #step3.step-pane
-        .center
-          %h3.blue.lighter This is step 3
-      #step4.step-pane
-        .center
-          %h3.green Congrats!
-          Your product is ready to ship! Click finish to continue!
+        #step2.step-pane.row
+          - info_alert do
+            = icon('hand-o-right', t('.step2_explanation'), class: 'hand-right-animated')
+          - hr_double
+          .row
+            %h3.blue.lighter.col-xs-push-3.col-sm-push-3.col-md-push-3.col-lg-push-3.col-xs-5= t('.step2_subtitle')
+          .space-8
+          = f.simple_fields_for :place do |pf|
+            = pf.input :name, autofocus: true, input_html: { class: "col-xs-10 col-sm-5", "min-length" => 2, required: true }, :label_html => { :class =>'col-xs-3 no-padding-right'}, placeholder: t('phrases.name')
+            = pf.input :description, input_html: { class: "col-xs-10 col-sm-5"}, :label_html => { :class =>'col-xs-3 no-padding-right', required: false }, placeholder: t('phrases.description')
+
+
+        #step3.step-pane.row
+          - info_alert do
+            = icon('hand-o-right', t('.explanation'), class: 'hand-right-animated')
+          - hr_double
+          .row
+            %h3.blue.lighter.col-xs-push-3.col-sm-push-3.col-md-push-3.col-lg-push-3.col-xs-5= t('.step3_subtitle')
+          .space-8
+        #step4.step-pane.row
+          .row
+            %h3.blue.lighter.col-xs-push-3.col-sm-push-3.col-md-push-3.col-lg-push-3.col-xs-5= t('.subtitle')
+            Your product is ready to ship! Click finish to continue!
+          .space-8
     .wizard-actions.actions
       %button.btn.btn-prev{disabled: "disabled"}
         =icon('arrow-left', t('phrases.previous'), class:'fa-on-left')

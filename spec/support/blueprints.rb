@@ -30,3 +30,7 @@ Premise.blueprint do
   description { 'Located at corner of 4th St. and Bruce Ave' }
   organisation { Organisation.last || Organisation.make! }
 end
+
+Place.blueprint do
+  # Attributes here
+end

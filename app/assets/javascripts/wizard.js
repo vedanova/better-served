@@ -11,6 +11,9 @@ var StartWizard = can.Control.extend({}, {
             if(info.step == 1 && $validation) {
                 if(!$('#new_premise').valid()) return false;
             }
+            if(info.step == 2 && $validation) {
+                if(!$('#premise_place_name').valid()) return false;
+            }
         }).on('finished', function(e) {
             bootbox.dialog({
                 message: "Thank you! Your information was successfully saved!",
