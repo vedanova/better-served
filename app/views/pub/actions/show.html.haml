@@ -1,0 +1,14 @@
+- title(@premise.name)
+%h3
+  -#= @premise.name
+.row
+  .col-xs-12
+    .widget-box
+      .widget-header
+        %h5 Wie können wir ihnen helfen?
+
+      .widget-body
+        .widget-main
+          = link_to 'Kellner rufen', '#', method: :post, class: "btn btn-info btn-block btn-lg"
+          = link_to 'Bezahlen', '#', method: :post, class: "btn btn-primary btn-success btn-block btn-lg"
+          = link_to 'Feedback', '#', class: "btn btn-primary btn-warning btn-block btn-lg"

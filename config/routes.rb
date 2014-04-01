@@ -1,5 +1,8 @@
 BetterServed::Application.routes.draw do
 
+  scope module: 'pub' do
+    get "q/:uuid", to: 'actions#show', as: :q
+  end
   resources :places do
     resources :items do
       member do
@@ -33,7 +36,7 @@ BetterServed::Application.routes.draw do
     post 'login' => 'sessions#create', as: :user_session
     delete 'logout' => 'sessions#destroy', as: :destroy_user_session
   end
-  
+
   namespace :admin do
     root "base#index"
     resources :users

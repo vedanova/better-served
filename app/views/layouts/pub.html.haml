@@ -1,0 +1,43 @@
+!!!
+%html
+  %head
+    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}
+    %title= @title || "BetterServed"
+    = favicon_link_tag 'favicon.ico'
+    = stylesheet_link_tag "pub", media: "all", "data-turbolinks-track" => false
+    = javascript_include_tag "pub", "data-turbolinks-track" => false
+    = csrf_meta_tags
+
+    <!--[if lte IE 8]>
+    = stylesheet_link_tag "ace/ace-ie"
+    <![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    = javascript_include_tag "ace/html5shiv"
+    = javascript_include_tag "ace/respond.min"
+    <![endif]-->
+
+  %body{class: "controller-#{controller_name}", id: "#{controller_name}-#{action_name}"}
+    #wrap
+      %header
+        = render 'layouts/navigation_pub'
+
+      .main-container#main-container
+        .main-container-inner
+          .main-content
+            .page-content
+              .row
+                .col-xs-12
+                  = yield
+
+    #footer.container
+      .navbar.navbar-default.navbar-fixed-bottom
+        .navbar-inner.navbar-content-center
+          .row.footer-first-row
+            .col-xs-12.text-center
+              %p.white
+                %small
+                  powered by
+                  = link_to 'BetterServed', 'http://www.better-served.com', target: '_blank', class: 'white'
+

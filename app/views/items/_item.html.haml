@@ -11,5 +11,5 @@
             %br
             = link_to download_place_item_path(@place, item), data: {rel: 'colorbox'}, class: 'cboxElement' do
               = icon('download')
-            = link_to '#', data: {rel: 'colorbox'}, class: 'cboxElement', target: '_blank' do
+            = link_to q_path(uuid: item.uuid), data: {rel: 'colorbox'}, class: 'cboxElement', target: '_blank' do
               = icon('link')

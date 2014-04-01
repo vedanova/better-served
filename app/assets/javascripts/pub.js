@@ -11,26 +11,4 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
-//= require turbolinks
-// require can-js/can.view.mustache
-// require can-js/can.observe.setter
-//= require can-js/can.view.modifiers
-// require can-js/can.construct.proxy
-// require can-js/can.observe.validations
-//= require can-js/can.construct.super
 //= require ace/bootstrap
-
-//= require ace/fuelux/fuelux.wizard
-//= require ace/jquery.validate
-//= require ace/bootbox
-//= require ace/jquery.maskedinput
-
-//= require ace/additional-methods
-
-//= require ace/ace-elements
-//= require ace/ace
-//= require ace/ace-extra
-
-//= require premise_model.js
-//= require wizard
