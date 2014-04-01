@@ -9,7 +9,8 @@ class Item < ActiveRecord::Base
 
   def qr
     url = "http://#{ENV['DOMAIN']}/q/#{uuid}"
-    RQRCode::QRCode.new(url)
+    puts url
+    RQRCode::QRCode.new(url, size: 10, level: :h)
   end
 
   private

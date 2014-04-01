@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.0'
+ruby '1.9.3'
 gem 'rails', '4.0.3'
 gem 'sass-rails', '~> 4.0.1'
 gem 'haml'
@@ -26,7 +26,7 @@ gem 'devise', '~> 3.2.2'
 gem 'foreigner'
 
 #qr
-gem 'rqrcode'
+gem 'rqrcode_png'
 
 group :doc do
   gem 'sdoc', require: false

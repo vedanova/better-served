@@ -21,7 +21,7 @@ class WizardController < ApplicationController
         binding.pry
         @place = @premise.reload.places.first
         item_attr['item_count'].to_i.times do |n|
-          @place.items.create!(name: "#{item_attr[:name]}-#{n}")
+          @place.items.create!(name: "#{item_attr[:name]} #{n}")
         end
         respond_with(@place)
       else
