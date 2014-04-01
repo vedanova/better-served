@@ -9,7 +9,7 @@ class DashboardController < ApplicationController
   private
 
   def new_user
-    redirect_to wizard_index_path
+    redirect_to wizard_index_path unless current_user.setup_finished?
   end
 
 end

@@ -108,3 +108,7 @@ en:
       step4_explanation:
         Congratulations. You are just a few clicks away to test your setup.
       finish_setup: 'Finish '
+
+  dashboard:
+    index:
+      title: 'Dashboard'

@@ -93,6 +93,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def setup_finished?
+    premises.exists?
+  end
+
   private
 
   def initialize_organization
