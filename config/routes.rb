@@ -1,7 +1,14 @@
 BetterServed::Application.routes.draw do
 
   resources :places do
-    resources :items
+    resources :items do
+      member do
+        get :download
+      end
+      collection do
+        get :download_all
+      end
+    end
   end
   resources :premises do
     resources :places

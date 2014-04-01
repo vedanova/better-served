@@ -1,5 +1,15 @@
 - title t('items')
 
+= link_to download_all_place_items_path(@place), target: '_blank' do
+  .infobox.infobox-grey.infobox-small.infobox-dark
+    .infobox-icon
+      = icon("download")
+    .infobox-data
+      .infobox-content
+        Download Qr codes
+
+.space-6
+
 - table do
   %thead
     %tr
@@ -12,3 +22,4 @@
 
 
 
+:javascript

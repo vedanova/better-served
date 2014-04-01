@@ -27,6 +27,7 @@ gem 'foreigner'
 
 #qr
 gem 'rqrcode_png'
+gem 'zip', require: false
 
 group :doc do
   gem 'sdoc', require: false

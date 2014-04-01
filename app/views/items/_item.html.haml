@@ -1,4 +1,15 @@
 %tr
   %td= item.name
   %td= item.description
-  %td  item.qr
+  %td
+    = ace_thumbnail do
+      .con
+        %img.qr_90{src: item.qr_data_url}
+        .text
+          .inner
+            %span= item.name
+            %br
+            = link_to download_place_item_path(@place, item), data: {rel: 'colorbox'}, class: 'cboxElement' do
+              = icon('download')
+            = link_to '#', data: {rel: 'colorbox'}, class: 'cboxElement', target: '_blank' do
+              = icon('link')

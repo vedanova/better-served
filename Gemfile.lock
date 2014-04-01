@@ -285,6 +285,7 @@ GEM
     yard (0.8.7.4)
     zeus (0.13.4.pre2)
       method_source (>= 0.6.7)
+    zip (2.0.2)
 
 PLATFORMS
   ruby
@@ -323,3 +324,4 @@ DEPENDENCIES
   turbolinks (~> 2.1.0)
   uglifier (~> 2.4.0)
   zeus (= 0.13.4.pre2)
+  zip

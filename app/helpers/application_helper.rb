@@ -38,5 +38,16 @@ module ApplicationHelper
     end
   end
 
+  def ace_thumbnail(&block)
+    capture_haml do
+      haml_tag "ul.ace-thumbnails" do
+        haml_tag :li do
+          yield
+        end
+      end
+
+    end
+  end
+
 
 end
