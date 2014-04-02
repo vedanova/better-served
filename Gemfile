@@ -29,6 +29,8 @@ gem 'foreigner'
 gem 'rqrcode_png'
 gem 'zip', require: false
 
+gem "pusher"
+
 group :doc do
   gem 'sdoc', require: false
 end

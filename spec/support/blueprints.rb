@@ -38,3 +38,7 @@ end
 Item.blueprint do
   # Attributes here
 end
+
+Request.blueprint do
+  # Attributes here
+end

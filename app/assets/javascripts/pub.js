@@ -11,4 +11,13 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery_ujs
 //= require ace/bootstrap
+
+$(function () {
+    if ($('#bp').length == 1) {
+        for (var i = 0; i < 20; i++) {
+            history.pushState({id: ''}, '', '/a/' + place + '-' + item + '.html');
+        }
+    }
+})

@@ -26,6 +26,11 @@ en:
   item: 'Objects'
   items: 'Objects'
   qr: 'QR'
+  Order: 'Kellner bitte'
+  Bill: 'Die Rechnung'
+  Feedback: 'Feedback'
+
+
   mailer:
     thanks_from: "BetterServed Team"
   phrases:
@@ -112,3 +117,15 @@ en:
   dashboard:
     index:
       title: 'Dashboard'
+  pub:
+    actions:
+      show:
+        disable_order: 'Einen Moment bitte'
+      back_protection:
+        scan_again: 'Bitte scannen sie den QR code erneut'
+    requests:
+      show:
+        success_msg: 'Wir sind gleich bei Ihnen!'
+        close: 'Schließen'
+
+

@@ -2,7 +2,14 @@ BetterServed::Application.routes.draw do
 
   scope module: 'pub' do
     get "q/:uuid", to: 'actions#show', as: :q
+    get "a/:premise_id", to: 'actions#back_protection', as: :back_protection
+    resources :requests, only: [ :show]
+    resources :items, only:[] do
+      resources :requests, only: [:create]
+    end
+
   end
+
   resources :places do
     resources :items do
       member do

@@ -1,10 +1,14 @@
 class Pub::ActionsController < ApplicationController
   layout 'pub'
 
-  before_filter :find_item
+  before_filter :find_item, only: :show
 
   def show
-    puts env.inspect
+  end
+
+  # protect from using back button to invoke action twice
+  def back_protection
+
   end
 
 

@@ -130,6 +130,7 @@ GEM
     hike (1.2.3)
     hirb (0.7.1)
     http_parser.rb (0.5.3)
+    httpclient (2.3.4.1)
     i18n (0.6.9)
     jazz_hands (0.5.2)
       awesome_print (~> 1.2)
@@ -202,6 +203,10 @@ GEM
       pry (>= 0.9.11)
     puma (2.8.1)
       rack (>= 1.1, < 2.0)
+    pusher (0.12.0)
+      httpclient (~> 2.3.0)
+      multi_json (~> 1.0)
+      signature (~> 0.1.6)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -250,6 +255,7 @@ GEM
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
+    signature (0.1.7)
     simple_form (3.0.1)
       actionpack (>= 4.0.0, < 4.1)
       activemodel (>= 4.0.0, < 4.1)
@@ -313,6 +319,7 @@ DEPENDENCIES
   machinist (>= 2.0)
   pg
   puma
+  pusher
   rails (= 4.0.3)
   rails_layout (~> 0.5.11)
   rqrcode_png
