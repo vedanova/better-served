@@ -1,8 +1,1 @@
-.space-4
-.well.well-lg
-  = icon('info-circle', t('.success_msg'), class:'')
-
-.space-10
-
--#.text-center
-  %button.btn.btn-lg.btn-success.center{data: {action: :close}}= t('.close')
+= render partial: '/pub/shared/thanks', locals: {header: t('pub.requests.create')}

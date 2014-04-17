@@ -1,5 +1,9 @@
 class Item < ActiveRecord::Base
 
+  has_many :requests
+  has_many :feedbacks
+  has_many :orders
+  has_many :bills
   belongs_to :place
   validate :name, presence: true, length: {in: 1..256}
   validate :uuid, presence: true, uniqueness: true

@@ -26,9 +26,13 @@ en:
   item: 'Objects'
   items: 'Objects'
   qr: 'QR'
-  Order: 'Kellner bitte'
-  Bill: 'Die Rechnung'
+  Order: 'New Order'
+  Bill: 'The Bill'
   Feedback: 'Feedback'
+  request_for: 'Request for '
+  feedback_for: 'Feedback for '
+
+
 
 
   mailer:
@@ -39,7 +43,7 @@ en:
     description: 'Description'
     next: 'Next'
     previous: 'Prev' # Wizard next, prev buttons
-    correct_errors: Please correct the errors and try again
+    correct_errors: 'Please correct the errors and try again'
 
   navigation:
     header:
@@ -118,14 +122,22 @@ en:
     index:
       title: 'Dashboard'
   pub:
+    close: 'Close'
     actions:
       show:
-        disable_order: 'Einen Moment bitte'
+        disable_order: 'One moment'
       back_protection:
-        scan_again: 'Bitte scannen sie den QR code erneut'
+        scan_again: 'Please scan the QR code again'
     requests:
       show:
-        success_msg: 'Wir sind gleich bei Ihnen!'
-        close: 'Schließen'
+        success_msg: 'We will be with you in a minute!'
+        close: 'Close'
+      create: 'We will be with you in a minute!'
+    feedbacks:
+      new:
+        content_placeholder: "Email, we get back to you (optional)"
+        title: "We appreciate your feedback"
+        submit: 'Submit'
+      thanks: 'Thanks for your feedback'
 
 

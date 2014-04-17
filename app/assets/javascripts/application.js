@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require can-js/can.jquery
 // require can-js/can.view.mustache
 // require can-js/can.observe.setter
 //= require can-js/can.view.modifiers

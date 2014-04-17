@@ -1,5 +1,4 @@
-- title(@premise.name)
-
+- title(t('request_for') + @premise.name)
 %h3
   -#= @premise.name
 .row#bp
@@ -12,7 +11,7 @@
         .widget-main
           = button_to 'Kellner rufen', item_requests_path(@item, type: 'Order'), method: :post, class: "btn btn-info btn-block btn-lg", disable_with: t('.disable_order')
           = link_to 'Bezahlen',  item_requests_path(@item, type: 'Bill'), method: :post, class: "btn btn-primary btn-success btn-block btn-lg", disable_with: t('.disable_order')
-          = link_to 'Feedback', '#', class: "btn btn-primary btn-warning btn-block btn-lg"
+          = link_to 'Feedback', new_item_feedback_path(@item.id), class: "btn btn-primary btn-warning btn-block btn-lg"
 
 :javascript
   var d = new Date();

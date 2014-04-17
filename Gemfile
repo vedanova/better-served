@@ -49,7 +49,6 @@ end
 # development gems
 group :development, :test do
   gem 'jazz_hands'
-  gem 'sqlite3', '~> 1.3.8'    # dev & test database
   gem 'figaro', '~> 0.7.0'     # env variables
   gem 'rails_layout', '~> 0.5.11'  # Bootstrap 3 layout generator
 end

@@ -1,0 +1,7 @@
+$(function () {
+    if ($('#bp').length == 1) {
+        for (var i = 0; i < <%= HISTORY_CREATE_COUNT %>; i++) {
+            history.pushState({id: ''}, '', '/de/a/' + place + '-' + item + '.html');
+        }
+    }
+})

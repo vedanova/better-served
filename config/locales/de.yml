@@ -1,0 +1,145 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+de:
+  app_name: 'BetterServed'
+  premise: 'Gebäude'
+  place: 'Räumlichkeit'
+  item: 'Objekt'
+  items: 'Objekte'
+  qr: 'QR'
+  Order: 'Neue Bestellung'
+  Bill: 'Die Rechnung'
+  Feedback: 'Feedback'
+  request_for: 'Anfrage für '
+  feedback_for: 'Feedback für '
+
+
+
+
+  mailer:
+    thanks_from: "BetterServed Team"
+  phrases:
+    hello: 'Hallo'
+    name: 'Name'
+    description: 'Beschreibung'
+    next: 'Weiter'
+    previous: 'Zurück' # Wizard next, prev buttons
+    correct_errors: Bitte korrigieren Sie die Fehler und versuchen Sie es erneut
+
+  navigation:
+    header:
+      user:
+        welcome: 'Willkommen'
+    items:
+      settings: 'Einstellungen'
+      profile: 'Profil'
+      log_out: 'Ausloggen'
+      home: 'Home'
+      dashboard: 'Übersicht'
+      sign_in: 'Anmelden'
+      sign_up: 'Registrieren'
+  login:
+      remember_me: ' Merken'
+      login: 'Benutzername oder Email'
+  sessions:
+      forgot_pwd: 'Passwort vergessen'
+      register: 'Registrieren'
+      login: 'Anmelden'
+  registration:
+      register: Registrierung
+      enter_details: 'Enter your details to begin:'
+      lost_confirmation_instructions: "Bestätigungsemail erneut senden"
+      email: 'Email'
+      first_name: 'Vorname'
+      last_name: 'Nachname'
+      password: 'Passwort'
+      password_confirmation: 'Passwortwiederholung'
+      username: 'User Name'
+      organization: 'Firma'
+  confirmations:
+      confirm_account: 'Nutzerkonto bestätigen'
+      confirm_account_text: 'Sie müssen ihren Anmeldung über den Link im Email bestätigen:'
+  reset_pwd:
+      reset_pwd_text: 'Eine Passwortänderung wurde über die Webseite angefragt. Klicken Sie auf den Link um fort zu fahren.'
+      reset_pwd_text2: "Wenn Sie keine Änderung angefordert haben, ignorieren Sie diese Email."
+      reset_pwd_text3: "Ihr Passwort wird nicht geändert ohne dass Sie dem Link folgen und ein neues Passwort angeben."
+
+  wizard:
+    title: "Schnellstart"
+    step_1: "Gebäude anlegen"
+    step_2: "Raum anlegen"
+    step_3: "Objekte anlegen"
+    step_4: "Zusammenfassung"
+    index:
+      title: 'Schnellstart'
+      header: "In wenigen Minuten können Sie loslegen"
+      intro_text: "Vielen Dank für Ihre Registrierung. Nach einer schnellen Einrichtung können Sie auch schon ihre erste Nachricht auslösen."
+      start_wizard: 'Einrichtungsassistent'
+    start:
+      title: 'Gebäude anlegen'
+      subtitle: 'Neues Gebäude'
+      explanation:
+        Als Firma können sie ein oder mehrere Gebäude anlegen, wenn sie nur eines haben legen Sie nur dieses an.
+      step2_title: 'Raum anlegen'
+      step2_subtitle: 'Neuer Raum'
+      step2_explanation:
+        Ein Gebäude kann ein oder mehrere Räume besitzen. Ein Raum kann ein Raum, ein Stockwerk oder jegliche
+        andere Örtlichkeit sein. Objekte werden in diesem Raum angelegt.
+      step3_title: 'Objekte anlegen'
+      step3_subtitle: 'Neue Objekte'
+      step3_placeholder: "Tisch, Raum, Drucker..."
+      step3_explanation:
+        Jeder Raum kann ein oder mehrere Objekte besitzen, die sie auszeichnen möchten. Dies könne Räume oder Tische sein,
+        oder auch Geräte wie Drucker
+
+        Each place can have one or more objects which can be rooms, tables, devices like printers, vending machines, whatever
+        you need to tag. In this quick setup you can enter a name for an object and the number of objects you want to create. We
+        will then create number these objects for you. You can rename them afterwards.
+      item_count: 'Number of items'
+      step4_subtitle: 'Summary'
+      step4_explanation:
+        Congratulations. You are just a few clicks away to test your setup.
+      finish_setup: 'Finish '
+
+  dashboard:
+    index:
+      title: 'Dashboard'
+  pub:
+    close: 'Schließen'
+    actions:
+      show:
+        disable_order: 'Einen Moment bitte'
+      back_protection:
+        scan_again: 'Bitte scannen sie den QR code erneut'
+    requests:
+      show:
+        success_msg: 'Wir sind gleich bei Ihnen!'
+        close: 'Schließen'
+      create: 'Wir sind gleich bei Ihnen!'
+    feedbacks:
+      new:
+        content_placeholder: "Email für Rückfragen (optional)"
+        title: "Wir freuen uns über ihr Feedback"
+        submit: 'Abschicken'
+      thanks: 'Danke für ihr Feedback'
+
+
