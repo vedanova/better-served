@@ -20,3 +20,7 @@ end
 And(/^I should see the thank you message$/) do
   page.should have_content I18n.t('pub.requests.create')
 end
+
+And(/^I should see the thank you for your feedback message$/) do
+  page.should have_content I18n.t('pub.feedbacks.thanks')
+end

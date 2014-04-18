@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ActionsController do
+describe Pub::ActionsController do
 
   describe "GET 'show'" do
     it "returns http success" do

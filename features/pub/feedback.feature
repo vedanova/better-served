@@ -9,5 +9,5 @@ Feature: As a user,
     When I click the feedback button
       And I submit my feedback
     Then a new feedback should have been created
-      And I should see the thank you message
+      And I should see the thank you for your feedback message
 

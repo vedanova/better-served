@@ -7,18 +7,6 @@ class ItemsController < ApplicationController
     @items = @place.items
   end
 
-  def show
-  end
-
-  def create
-  end
-
-  def delete
-  end
-
-  def update
-  end
-
   def download
     @item = @place.items.find(download_params[:id])
     send_data @item.qr.resize(400, 400), type: "image/png", filename: @item.qr_file_name

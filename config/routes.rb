@@ -12,8 +12,8 @@ BetterServed::Application.routes.draw do
     end
   end
   scope "(:locale)" do
-    resources :places do
-      resources :items do
+    resources :places, only: [] do
+      resources :items, only: [:index] do
         member do
           get :download
         end

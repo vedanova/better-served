@@ -1,16 +1,5 @@
 class PremisesController < ApplicationController
-  def index
-  end
 
-  def create
-  end
+  before_filter :authenticate_user!
 
-  def show
-  end
-
-  def delete
-  end
-
-  def update
-  end
 end
