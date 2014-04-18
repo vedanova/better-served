@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 ruby '1.9.3'
-gem 'rails', '4.0.3'
+gem 'rails', '4.1'
 gem 'sass-rails', '~> 4.0.1'
 gem 'haml'
 gem 'haml-rails'
@@ -55,6 +55,7 @@ end
 
 group :development do
   gem 'guard-livereload', require: false
+  gem 'spring'
 end
 
 #gem 'bootstrap-sass', '~> 3.0.3.0'
