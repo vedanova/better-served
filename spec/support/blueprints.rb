@@ -32,11 +32,13 @@ Premise.blueprint do
 end
 
 Place.blueprint do
-  # Attributes here
+  name { 'Beergarden' }
+  premise {Premise.last || Premise.make!}
 end
 
 Item.blueprint do
-  # Attributes here
+  name {"Table 1"}
+  place {Place.last || Place.make!}
 end
 
 Request.blueprint do

@@ -58,30 +58,40 @@ de:
       sign_in: 'Anmelden'
       sign_up: 'Registrieren'
   login:
-      remember_me: ' Merken'
-      login: 'Benutzername oder Email'
+    remember_me: ' Merken'
+    login: 'Benutzername oder Email'
   sessions:
-      forgot_pwd: 'Passwort vergessen'
-      register: 'Registrieren'
-      login: 'Anmelden'
+    forgot_pwd: 'Passwort vergessen'
+    register: 'Registrieren'
+    login: 'Anmelden'
+    new:
+      enter_info: 'Bitte geben Sie ihre Daten ein'
+
   registration:
-      register: Registrierung
-      enter_details: 'Enter your details to begin:'
-      lost_confirmation_instructions: "Bestätigungsemail erneut senden"
-      email: 'Email'
-      first_name: 'Vorname'
-      last_name: 'Nachname'
-      password: 'Passwort'
-      password_confirmation: 'Passwortwiederholung'
-      username: 'User Name'
-      organization: 'Firma'
+    register: Registrierung
+    enter_details: 'Enter your details to begin:'
+    lost_confirmation_instructions: "Bestätigungsemail erneut senden"
+    email: 'Email'
+    first_name: 'Vorname'
+    last_name: 'Nachname'
+    password: 'Passwort'
+    password_confirmation: 'Passwortwiederholung'
+    username: 'User Name'
+    organization: 'Firma'
   confirmations:
-      confirm_account: 'Nutzerkonto bestätigen'
-      confirm_account_text: 'Sie müssen ihren Anmeldung über den Link im Email bestätigen:'
+    confirm_account: 'Nutzerkonto bestätigen'
+    confirm_account_text: 'Sie müssen ihren Anmeldung über den Link im Email bestätigen:'
+    didn_receive: "Bestätigungsemail nicht erhalten?"
+  devise:
+    confirmations:
+      new:
+        title: 'Bestätigungsemail erneut senden'
+        resend: 'Senden'
+
   reset_pwd:
-      reset_pwd_text: 'Eine Passwortänderung wurde über die Webseite angefragt. Klicken Sie auf den Link um fort zu fahren.'
-      reset_pwd_text2: "Wenn Sie keine Änderung angefordert haben, ignorieren Sie diese Email."
-      reset_pwd_text3: "Ihr Passwort wird nicht geändert ohne dass Sie dem Link folgen und ein neues Passwort angeben."
+    reset_pwd_text: 'Eine Passwortänderung wurde über die Webseite angefragt. Klicken Sie auf den Link um fort zu fahren.'
+    reset_pwd_text2: "Wenn Sie keine Änderung angefordert haben, ignorieren Sie diese Email."
+    reset_pwd_text3: "Ihr Passwort wird nicht geändert ohne dass Sie dem Link folgen und ein neues Passwort angeben."
 
   wizard:
     title: "Schnellstart"
@@ -128,6 +138,10 @@ de:
     actions:
       show:
         disable_order: 'Einen Moment bitte'
+        waiter: 'Neue Bestellung'
+        the_bill: 'Die Rechnung'
+        feedback: 'Feedback'
+        how_can_we_help: "Wie können wir ihnen helfen?"
       back_protection:
         scan_again: 'Bitte scannen sie den QR code erneut'
     requests:

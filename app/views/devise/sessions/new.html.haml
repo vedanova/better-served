@@ -1,5 +1,5 @@
 .widget-main
-  %h4.header.blue.lighter.bigger Please Enter Your Information
+  %h4.header.blue.lighter.bigger= t('sessions.new.enter_info')
   = render 'layouts/messages'
   = devise_error_messages!
   = form_for(resource, as: resource_name, url: session_path(resource_name), role: 'form') do |f|
@@ -33,7 +33,7 @@
       =icon('arrow-right')
 .space-4
 .links.text-center
-  = link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name)
+  = link_to t('confirmations.didn_receive'), new_confirmation_path(resource_name)
 .space-4
 
 

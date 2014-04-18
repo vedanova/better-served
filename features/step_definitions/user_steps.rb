@@ -181,8 +181,7 @@ end
 
 
 Then /^I should be signed out$/ do
-  page.should have_content "Please Enter Your Information"
-  #page.should_not have_content "Logout"
+  page.should have_content t('sessions.new.enter_info')
 end
 
 def sign_in

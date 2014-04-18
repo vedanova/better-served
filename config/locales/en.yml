@@ -32,9 +32,6 @@ en:
   request_for: 'Request for '
   feedback_for: 'Feedback for '
 
-
-
-
   mailer:
     thanks_from: "BetterServed Team"
   phrases:
@@ -58,12 +55,15 @@ en:
       sign_in: 'Log in'
       sign_up: 'Sign up'
   login:
-      remember_me: ' Remember Me'
-      login: 'Username or email'
+    remember_me: ' Remember Me'
+    login: 'Username or email'
   sessions:
-      forgot_pwd: 'I forgot my password'
-      register: 'I want to register'
-      login: 'I want to login'
+    forgot_pwd: 'I forgot my password'
+    register: 'I want to register'
+    login: 'I want to login'
+    new:
+      enter_info: 'Please Enter Your Information'
+
   registration:
       register: New User Registration
       enter_details: 'Enter your details to begin:'
@@ -76,12 +76,18 @@ en:
       username: 'Username'
       organization: 'Company'
   confirmations:
-      confirm_account: 'Confirm my account'
-      confirm_account_text: 'You need to confirm your account email through the link below:'
+    confirm_account: 'Confirm my account'
+    confirm_account_text: 'You need to confirm your account email through the link below:'
+    didn_receive: "Didn't receive confirmation instructions?"
+  devise:
+      confirmations:
+        new:
+          title: 'Resend confirmation instructions'
+          resend: 'Send'
   reset_pwd:
-      reset_pwd_text: 'Someone has requested a link to change your password. You can do this through the link below.'
-      reset_pwd_text2: "If you didn't request this, please ignore this email."
-      reset_pwd_text3: "Your password won't change until you access the link above and create a new one."
+    reset_pwd_text: 'Someone has requested a link to change your password. You can do this through the link below.'
+    reset_pwd_text2: "If you didn't request this, please ignore this email."
+    reset_pwd_text3: "Your password won't change until you access the link above and create a new one."
 
   wizard:
     title: "Quick setup"
@@ -126,6 +132,10 @@ en:
     actions:
       show:
         disable_order: 'One moment'
+        waiter: 'New order'
+        the_bill: 'The bill'
+        feedback: 'Feedback'
+        how_can_we_help: 'How can we help?'
       back_protection:
         scan_again: 'Please scan the QR code again'
     requests:
@@ -138,6 +148,7 @@ en:
         content_placeholder: "Email, we get back to you (optional)"
         title: "We appreciate your feedback"
         submit: 'Submit'
+    shared:
       thanks: 'Thanks for your feedback'
 
 

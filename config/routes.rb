@@ -11,7 +11,7 @@ BetterServed::Application.routes.draw do
       end
     end
   end
-  scope "/:locale" do
+  scope "(:locale)" do
     resources :places do
       resources :items do
         member do
@@ -51,6 +51,8 @@ BetterServed::Application.routes.draw do
       resources :users
     end
 
+  end
+  scope '(:locale)' do
     root to: "pages#home"
   end
 end

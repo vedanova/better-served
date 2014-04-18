@@ -1,5 +1,5 @@
 .widget-main
-  %h4.header.blue.lighter.bigger Resend confirmation instructions
+  %h4.header.blue.lighter.bigger= t('devise.confirmations.new.title')
   = render 'layouts/messages'
   = devise_error_messages!
   = form_for(resource, :as => resource_name,
@@ -17,7 +17,7 @@
 
     .row
       .col-sm-6
-        = f.submit "Resend confirmation instructions", class: "btn btn-primary"
+        = f.submit t('devise.confirmations.new.resend'), class: "btn btn-primary"
 
 
 

@@ -60,3 +60,7 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 Dir.glob((Rails.root + 'spec/support/*.rb').to_s).each do |file|
   require file
 end
+
+def t(val)
+  I18n.t(val)
+end

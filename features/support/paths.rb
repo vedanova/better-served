@@ -14,6 +14,10 @@ module NavigationHelpers
         wizard_index_path
       when /^the login page$/
         new_user_session_path
+      when /^the QR code landing page$/
+        uuid = Item.last.uuid
+        q_path('de', uuid)
+
 
 
       # Add more mappings here.

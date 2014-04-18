@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
+ruby '2.0.0'
 gem 'rails', '4.1'
 gem 'sass-rails', '~> 4.0.1'
 gem 'haml'
@@ -47,9 +47,11 @@ group :test, :cucumber do
 end
 
 # development gems
-group :development, :test do
-  gem 'jazz_hands'
+group :development, :test, :cucumber do
+  #gem 'jazz_hands'
   gem 'figaro', '~> 0.7.0'     # env variables
+  gem "spring-commands-cucumber"
+  gem "spring-commands-rspec"
   gem 'rails_layout', '~> 0.5.11'  # Bootstrap 3 layout generator
 end
 

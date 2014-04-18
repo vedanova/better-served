@@ -5,7 +5,7 @@ require 'rails/all'
 WIZARD_MIN_ITEM_COUNT = 1
 WIZARD_MAX_ITEM_COUNT = 30
 WIZARD_MAX_ITEM_DEFAULT = 5
-HISTORY_CREATE_COUNT = 20
+HISTORY_CREATE_COUNT = Rails.env == 'development' ? 1 : 20
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -23,7 +23,7 @@ module BetterServed
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    #config.i18n.default_locale = :de
+    config.i18n.default_locale = :de
 
 
     # Test framework
