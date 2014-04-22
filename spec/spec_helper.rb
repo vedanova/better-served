@@ -38,4 +38,9 @@ RSpec.configure do |config|
 
   config.include Devise::TestHelpers, :type => :controller
   config.extend ControllerMacros, :type => :controller
+
+
+  config.before(:suite) do
+    #Request.any_instance.stub(:push_msg)
+  end
 end

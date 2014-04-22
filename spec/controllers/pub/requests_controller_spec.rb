@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Pub::RequestsController do
 
   before do
+    Request.any_instance.stub(:push_msg)
     @item = Item.make!
   end
 

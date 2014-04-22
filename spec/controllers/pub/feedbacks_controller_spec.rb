@@ -6,6 +6,9 @@ describe Pub::FeedbacksController do
   let(:item) { Item.make! }
 
   describe "GET 'create'" do
+    before do
+      Request.any_instance.stub(:push_msg)
+    end
     it "returns http success" do
       expect do
         get 'create', feedback_params.merge(item_id: item.id)
