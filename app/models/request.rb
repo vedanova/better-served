@@ -6,7 +6,6 @@ class Request < ActiveRecord::Base
   def push_msg
     message
     Pusher["private_#{item.place.uuid}_notifications"].trigger('action', {message: message})
-    #Pusher[PUSHER_REQUEST_CHANNEL].trigger('new_request', {:message => msg})
   end
 
   def message

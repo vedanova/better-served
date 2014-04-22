@@ -17,4 +17,5 @@ class Pub::RequestsController < ApplicationController
 
   def show
   end
+
 end

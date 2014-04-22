@@ -1,7 +1,7 @@
 BetterServed::Application.routes.draw do
 
   scope module: 'pub' do
-    scope "/:locale" do
+    scope "(/:locale)" do
       get "q/:uuid", to: 'actions#show', as: :q
       get "a/:premise_id", to: 'actions#back_protection', as: :back_protection
       resources :requests, only: [:show]

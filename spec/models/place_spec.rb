@@ -1,5 +1,9 @@
 require 'spec_helper'
 
 describe Place do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it 'should set a uuid' do
+    Place.make!.uuid.should_not be_nil
+  end
+
 end

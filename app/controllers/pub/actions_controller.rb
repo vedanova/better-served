@@ -8,7 +8,6 @@ class Pub::ActionsController < ApplicationController
 
   # protect from using back button to invoke action twice
   def back_protection
-
   end
 
 
