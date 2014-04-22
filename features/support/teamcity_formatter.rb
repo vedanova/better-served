@@ -1,4 +1,4 @@
-class TeamCityFormatter #< Cucumber::Ast::Visitor
+class TeamCityFormatter < Cucumber::Ast::Visitor
   
   def initialize(step_mother, io, options, delim='|')
     super(step_mother)

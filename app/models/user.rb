@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true, length: {in: 3..255}
   validates :role, presence: true, inclusion: {in: USER_ROLES}
 
+  before_validation :set_role, if: ->(user) { user.role.nil? }, on: :create
+
   has_many :premises, through: :organisation
 
   # Virtual attribute for authenticating by either username or email
@@ -101,6 +103,10 @@ class User < ActiveRecord::Base
 
   def initialize_organization
     self.build_organisation if self.organisation.nil?
+  end
+
+  def set_role
+    self.role = OWNER_ROLE if role.blank?
   end
 
 end
